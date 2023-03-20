@@ -19,7 +19,7 @@ const DivLupa = styled.div`
 `;
 
 const ContainerCategory = () => {
-  const [category] = useFetch("http://3.144.167.227:8080/category");
+  const [category] = useFetch("https://backend-your-keys-production.up.railway.app/category");
 
   return (
     <DivContainer>

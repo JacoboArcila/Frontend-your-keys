@@ -30,7 +30,7 @@ import useFetch from '../../hooks/useFetch';
 const Home = () => {
   const { state, setCategoryList } = useContext(AppContext);
 
-  const [vehiculos, isLoading] = useFetch("http://3.144.167.227:8080/vehicle")
+  const [vehiculos, isLoading] = useFetch("https://backend-your-keys-production.up.railway.app/vehicle")
 
   const [responses] = useRequest({
     axiosInstance: axios,
@@ -62,7 +62,7 @@ const Home = () => {
 
     axios({
       method: "post",
-      url: "http://3.144.167.227:8080/vehicle/booking",
+      url: "https://backend-your-keys-production.up.railway.app/vehicle/booking",
       data: objFilter,
     })
       .then((res) => {

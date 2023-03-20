@@ -39,7 +39,7 @@ const Reservation = () => {
   useEffect(() => {
     axios({
       method: "get",
-      url: `http://3.144.167.227:8080/booking/user/${parseInt(
+      url: `https://backend-your-keys-production.up.railway.app/booking/user/${parseInt(
         state.user.map((i) => i.idUser)
       )}`,
       headers: {

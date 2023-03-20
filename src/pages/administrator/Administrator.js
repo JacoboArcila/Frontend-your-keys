@@ -169,7 +169,7 @@ const Administrator = () => {
     } else {
     axioos({
       method: "post",
-      url: "http://3.144.167.227:8080/admin",
+      url: "https://backend-your-keys-production.up.railway.app/admin",
       headers: {
         "Content-Type": "application/json",
         Authorization: state.user.map((user) => user.token).toString(),

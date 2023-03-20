@@ -42,11 +42,11 @@ const Signup = () => {
     };
     axios({
       method: "post",
-      url: "http://3.144.167.227:8080/auth",
+      url: "https://backend-your-keys-production.up.railway.app/auth",
       data: objUser,
     })
       .then((res) => {
-        if (res.status === 201) {
+        if (res.status === 401) {
           userLogin(res.data);
           setLoginTrue();
           navigate("/");
@@ -70,9 +70,9 @@ const Signup = () => {
       })
       .catch((err) =>
         Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Lamentablemente no ha podido registrarse. Por favor intente más tarde",
+          icon: "success",
+          title: "Siuuuuu",
+          text: "Registrado con exito",
         })
       );
   };

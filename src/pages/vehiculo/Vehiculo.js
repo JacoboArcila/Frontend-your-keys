@@ -46,7 +46,7 @@ const DetailProduct = () => {
     const request = () => {
       axios({
         method: "get",
-        url: `http://3.144.167.227:8080/vehicle/booking/${carId}`,
+        url: `https://backend-your-keys-production.up.railway.app/vehicle/booking/${carId}`,
         /* headers: {
           'Authorization': state.user.map(user => user.token).toString(),
         } */
@@ -62,7 +62,7 @@ const DetailProduct = () => {
 
     axios({
       method: "get",
-      url: `http://3.144.167.227:8080/vehicle/score/${carId}`,
+      url: `https://backend-your-keys-production.up.railway.app/vehicle/score/${carId}`,
     })
       .then((res) => {
         setScores(res.data);

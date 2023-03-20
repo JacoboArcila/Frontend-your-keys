@@ -34,7 +34,7 @@ const Card = ({ car }) => {
   useEffect(() => {
     axios({
       method: "get",
-      url: `http://3.144.167.227:8080/vehicle/score/${car?.idVehicle}`,
+      url: `https://backend-your-keys-production.up.railway.app/vehicle/score/${car?.idVehicle}`,
     })
       .then((res) => {
         setScores(res.data);

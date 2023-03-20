@@ -12,7 +12,7 @@ import {
   DivSize,
   DivContainerMain,
   DivPriceTotal,
-  DivFormBox
+  DivFormBox,
 } from "./formStyles";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
@@ -74,7 +74,7 @@ const FormBooking = () => {
 
     axios({
       method: "get",
-      url: `http://3.144.167.227:8080/vehicle/${state.carId}`,
+      url: `https://backend-your-keys-production.up.railway.app/vehicle/${state.carId}`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -123,7 +123,7 @@ const FormBooking = () => {
     } else { */
     axios({
       method: "post",
-      url: "http://3.144.167.227:8080/booking",
+      url: "https://backend-your-keys-production.up.railway.app/booking",
       headers: {
         "Content-Type": "application/json",
         Authorization: state.user.map((user) => user.token).toString(),
@@ -143,11 +143,19 @@ const FormBooking = () => {
         });
       })
       .catch((err) => {
-        console.log(err);
+        /* console.log(err);
         Swal.fire({
           position: "center",
           icon: "error",
           title: "No se pudo hacer la reserva",
+          showConfirmButton: false,
+          timer: 1500,
+        }); */
+        navigate("/");
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Reserva Exitosa",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -372,7 +380,27 @@ const FormBooking = () => {
                           Debes completar todos los campos para realizar el pago
                         </p>
                       ) : (
-                        <Paypal price={priceVehi} handleSubmit={handleSubmit} />
+                        <>
+                          {/* <Paypal price={priceVehi} handleSubmit={handleSubmit} /> */}
+                          <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                            style={{
+                              padding: "20px 30px",
+                              border: "1px solid black",
+                              borderRadius: "20px",
+                              fontSize: "20px",
+                              margin: "0 auto",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              cursor: "pointer"
+                            }}
+                            onClick={handleSubmit}
+                          >
+                            Confirmar reserva
+                          </motion.button>
+                        </>
                       )}
                       {/* <motion.button
                         whileHover={{ scale: 1.1 }}

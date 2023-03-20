@@ -27,7 +27,7 @@ const StarRating = ({ carId }) => {
   useEffect(() => {
     axios({
       method: "get",
-      url: `http://3.144.167.227:8080/vehicle/score/${carId}`
+      url: `https://backend-your-keys-production.up.railway.app/vehicle/score/${carId}`
     })
       .then((res) => {
         setScores(res.data)
@@ -49,7 +49,7 @@ const StarRating = ({ carId }) => {
         };
         axios({
           method: "post",
-          url: "http://3.144.167.227:8080/score",
+          url: "https://backend-your-keys-production.up.railway.app/score",
           headers: {
             "Content-Type": "application/json",
             Authorization: state.user.map((user) => user.token).toString(),

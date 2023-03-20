@@ -29,7 +29,7 @@ const Login = () => {
   const submitLogin = (values) => {
     axios({
       method: "post",
-      url: "http://3.144.167.227:8080/auth/login",
+      url: "https://backend-your-keys-production.up.railway.app/auth/login",
       data: values,
     })
       .then((res) => {
